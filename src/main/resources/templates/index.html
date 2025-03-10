@@ -4,7 +4,7 @@
     <title>Listado de Productos</title>
     <style>
         table {
-            width: 80%;
+            width: 100%;
             border-collapse: collapse;
         }
         th, td {
@@ -15,6 +15,18 @@
         img {
             width: 50px;
         }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -23,14 +35,22 @@
     <tr>
         <th>Imagen</th>
         <th>Nombre</th>
+        <th>Descripción</th>
         <th>Precio</th>
         <th>Categoría</th>
+        <th>Acción</th>
     </tr>
     <tr th:each="item : ${items}">
         <td><img th:src="${item.image}" alt="Producto"/></td>
         <td th:text="${item.title}"></td>
+        <td th:text="${item.description}"></td>
         <td th:text="${item.price}"></td>
         <td th:text="${item.category}"></td>
+        <td>
+            <a th:href="@{/detalle/{id}(id=${item._id})}" class="btn">Ver más</a>
+        </td>
+
+
     </tr>
 </table>
 </body>

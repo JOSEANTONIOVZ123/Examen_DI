@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .btn {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {it
+
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Error</h1>
+    <p th:text="${mensaje}"></p>
+    <a href="/" class="btn">Volver al Inicio</a>
+</div>
+</body>
+</html>
